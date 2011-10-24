@@ -33,16 +33,14 @@ $.fn.jplaceholder = function(args) {
 	
     $(this).find('input[placeholder!=""], textarea[placeholder!=""]').each(function (i) {
         var t = $(this), 
-			p = t.parent(),
-			offsetLeftAdj = this.nodeName.toLowerCase() == 'textarea' ? 2 : 4;
-				
-        var val = t.attr('placeholder'),
+			p = t.parent(),				
+        	val = t.attr('placeholder'),
 			ph = $('<span class="ieplaceholder">' + val + '</span>'),
 			isPassword = t.attr('type')=='password',
 			css = {
 				position: 'absolute',
 				top: (t.offset().top - p.offset().top + 2) + 'px',
-				left: (t.offset().left - p.offset().left + offsetLeftAdj) + 'px',
+				left: (t.offset().left - p.offset().left + 2) + 'px',
 				font_family: t.css('font-family'),
 				font_size: t.css('font-size'),
 				font_weight: t.css('font-weight'),
