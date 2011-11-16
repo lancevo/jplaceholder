@@ -100,6 +100,7 @@ Styling placeholder text
 	<style>
 		#form4 input {
 			color:#f00;
+			font-size:16px;
 		}
 		
 		#form4 input + .jplaceholder.focus {
@@ -112,6 +113,7 @@ Styling placeholder text
 	<style>
 		#form4 .jplaceholder {
 			color:#f00 !important;
+			font-size:16px;
 		}
 		/* focus */
 		
@@ -119,6 +121,10 @@ Styling placeholder text
 			color:#333 !important;
 		}
 	</style>
+	
+	<script>
+		$("#form4").jplaceholder({showOnFocus:true});
+	</script>
 	
 	
 		

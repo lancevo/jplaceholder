@@ -4,6 +4,8 @@ jplaceholder.js
 Lance Vo
 MIT License
 
+https://github.com/lvo811/jplaceholder
+
 usage:
 
 $("form").jplaceholder(args);
