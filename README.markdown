@@ -3,12 +3,13 @@ jplaceholder.js
 
 jplaceholder is a jQuery plug-in that is complementary to both HTML5 and non-HTML5 browsers. 
 
+*Notes: I removed **placeholder** attribute, and will add it later. Use **jplaceholder** attribute for now.* 
 Features
 --------
 
-Apply the same style to placeholder text from the input's style
-Show or Hide placeholder text when input is focusing
-Callbacks for events
+- Apply the same styles from input to placeholder text
+- Show or Hide placeholder text when input is focusing
+- Events callback
 
 Usage
 -----
@@ -25,10 +26,10 @@ Placeholder text is hidden when input field is focusing
 
 	<form id="form1">
 		<label>
-			<input name="user" _jplaceholder_="User ID" />
+			<input name="user" jplaceholder="User ID" />
 		</label>
 		<label>
-			<input name="pass" _jplaceholder_"Password" />
+			<input name="pass" jplaceholder="Password" />
 		</label>
 	</form>
 
@@ -43,10 +44,10 @@ Placeholder text is shown when input field is focusing, and is hidden when a key
 
 	<form id="form2">
 		<label>
-			<input name="user" _jplaceholder_="User ID" />
+			<input name="user" jplaceholder="User ID" />
 		</label>
 		<label>
-			<input name="pass" _jplaceholder_"Password" />
+			<input name="pass" jplaceholder="Password" />
 		</label>
 	</form>
 
@@ -57,14 +58,14 @@ Placeholder text is shown when input field is focusing, and is hidden when a key
 
 Example 3
 ---------
-Callback functions. It's useful for validation or any custom triggers.
+Callback functions. It's useful for validation or event triggers.
 
 	<form id="form3">
 		<label>
-			<input name="user" _jplaceholder_="User ID" />
+			<input name="user" jplaceholder="User ID" />
 		</label>
 		<label>
-			<input name="pass" _jplaceholder_"Password" />
+			<input name="pass" jplaceholder="Password" />
 		</label>
 	</form>
 
@@ -89,10 +90,10 @@ Styling placeholder text
 
 	<form id="form4">
 		<label>
-			<input name="user" id="user" _jplaceholder_="User ID" />
+			<input name="user" id="user" jplaceholder="User ID" />
 		</label>
 		<label>
-			<input name="pass" id="pass" _jplaceholder_"Password" />
+			<input name="pass" id="pass" jplaceholder="Password" />
 		</label>
 	</form>
 
