@@ -39,13 +39,17 @@ You can use HTML5 *placeholder* or *jplaceholder* attribute if you're experienci
 	
 Settings
 --------
-	$(elements).jplaceholder({ force, showOnFocus, focusFn, keypressFn, blurFn	});
-	
-	**force** : *boolean* enable placeholder even in browsers that are supporting placeholder
-	**showOnFocus** : *boolean* show placeholder text when the element is focusing
-	**focusFn** : *function(object, event)* callback function when element is focusing, object is the current element itself
-	**keypressFn** : *function(object, event)* callback function when a key pressed 
-	**blurFn** : *function(object, event)* callback function when element is not focused
+$(elements).jplaceholder({ force, showOnFocus, focusFn, keypressFn, blurFn	});
+
+**force** : *boolean* enable placeholder even in browsers that are supporting placeholder
+
+**showOnFocus** : *boolean* show placeholder text when the element is focusing
+
+**focusFn** : *function(object, event)* callback function when element is focusing, object is the current element itself
+
+**keypressFn** : *function(object, event)* callback function when a key pressed 
+
+**blurFn** : *function(object, event)* callback function when element is not focused
 	
 	
 Fallback method
@@ -117,7 +121,7 @@ Styling placeholder
 		}
 	</style>
 
-	### OR
+### OR
 
 	<style>
 		/* jplaceholder plug-in retrieve the styles automatically */
