@@ -27,7 +27,7 @@ You can use HTML5 *placeholder* or *jplaceholder* attribute if you're experienci
 	<script>
 		$("form").jplaceholder();
 		
-	*or*
+//*or*
 	 
 		$("input, textarea").jplaceholder();
 	</script>
@@ -121,7 +121,7 @@ Styling placeholder
 		}
 	</style>
 
-### OR
+### Or
 
 	<style>
 		/* jplaceholder plug-in retrieve the styles automatically */
