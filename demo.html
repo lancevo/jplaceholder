@@ -10,20 +10,25 @@
 
 <body>
 
-	
+	<h2>Example 5</h2>
+	<form id="form5">
+		<input name="user" placeholder="" jplaceholder="bye"> <br/>
+		<input name="pass" type="password" placeholder="ahh" />
+		<textarea placeholder="hey hey"></textarea>
+		<span>
+	</form>	
+	<script>
+		$("#form5").jplaceholder({showOnFocus:true})
+	</script>
 
 <h2>Example 1</h2>
 <p>
 Placeholder text is hidden when input field is focusing
 </p>
 <form id="form1">
-    <label>
         <input name="user" jplaceholder="User ID" />
-    </label>
    <br/>
- 	<label>
         <input name="pass" jplaceholder="Password" />
-    </label>
 </form>
 
 <script>
@@ -95,7 +100,7 @@ Styling placeholder text
     </label>
    <br />
  	<label>
-        <input name="pass" id="pass" jplaceholder="Password" />
+        <input type="password" name="pass" id="pass" jplaceholder="Password" />
     </label>
 </form>
 
@@ -113,6 +118,8 @@ Styling placeholder text
 <script>
     $("#form4").jplaceholder({showOnFocus:true});
 </script>
+
+
 
 </body>
 </html>

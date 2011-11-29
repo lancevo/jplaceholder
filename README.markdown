@@ -1,76 +1,88 @@
 jplaceholder.js
 ===============
 
-jplaceholder is a jQuery plug-in that is complementary to both HTML5 and non-HTML5 browsers. 
+A jQuery plugin to enable HTML5 placeholder on most browsers. 
 
-*Notes: I removed **placeholder** attribute, and will add it later. Use **jplaceholder** attribute for now.* 
 Features
 --------
-
-- Apply the same styles from input to placeholder text
-- Show or Hide placeholder text when input is focusing
+- Use it as a fallback for browser doesn't support placeholder
+- Force it to display on all browsers even browsers that are supporting placeholder
+- Show placeholder text when input field is focusing
 - Events callback
+- Automatically applies the same styles from input field to placeholder text
+
 
 Usage
 -----
 
+You can use HTML5 *placeholder* or *jplaceholder* attribute if you're experiencing [FOUT](#FOUT) (Flash Of Unstyled Text)
+
+	<form>
+		<input name="phone" type="text" placeholder="Enter your phone number" />
+		<input name="pass" type="password" placeholder="Password" />
+		<input name="id" type="text" jplaceholder="User ID" />
+	</form>	
+
 	<script src="jplaceholder.js"></script>
 	<script>
 		$("form").jplaceholder();
+		
+	*or*
+	 
+		$("input, textarea").jplaceholder();
 	</script>
+
+
+ 
+
+
 	
-Example 1
----------
+Settings
+--------
+	$(elements).jplaceholder({ force, showOnFocus, focusFn, keypressFn, blurFn	});
+	
+	**force** : *boolean* enable placeholder even in browsers that are supporting placeholder
+	**showOnFocus** : *boolean* show placeholder text when the element is focusing
+	**focusFn** : *function(object, event)* callback function when element is focusing, object is the current element itself
+	**keypressFn** : *function(object, event)* callback function when a key pressed 
+	**blurFn** : *function(object, event)* callback function when element is not focused
+	
+	
+Fallback method
+---------------
 
-Placeholder text is hidden when input field is focusing
+Use jplaceholder as a fallback method for older browsers that don't support HTML5 placeholder. 
 
-	<form id="form1">
-		<label>
-			<input name="user" jplaceholder="User ID" />
-		</label>
-		<label>
-			<input name="pass" jplaceholder="Password" />
+	<form>
+		<input name="user" jplaceholder="User ID" />
+		<input name="pass" jplaceholder="Password" />
 		</label>
 	</form>
 
 	<script>
-	$("#form1").jplaceholder();
+	$("form").jplaceholder();
 	</script>
 	
-Example 2
----------
+	
+	
+Show placeholder when input's focusing
+--------------------------------------
 
-Placeholder text is shown when input field is focusing, and is hidden when a key is pressed
+Placeholder text will goes away when the a key entered. It reduces the text opacity to 50%.
 
-	<form id="form2">
-		<label>
-			<input name="user" jplaceholder="User ID" />
-		</label>
-		<label>
-			<input name="pass" jplaceholder="Password" />
-		</label>
+	$("form").jplaceholder({*showOnFocus:true*});
+
+
+Callback functions
+------------------
+
+	<form>
+		<input name="user" jplaceholder="User ID" />
+		<input name="pass" jplaceholder="Password" />
 	</form>
 
 	<script>
-	$("#form2").jplaceholder({showOnFocus:true});
-	</script>
-	
-
-Example 3
----------
-Callback functions. It's useful for validation or event triggers.
-
-	<form id="form3">
-		<label>
-			<input name="user" jplaceholder="User ID" />
-		</label>
-		<label>
-			<input name="pass" jplaceholder="Password" />
-		</label>
-	</form>
-
-	<script>
-	$("#form3").jplaceholder({
+	$("form").jplaceholder({
 		focusFn: function(obj, event) {
 			console.log('focus event  input name= ' + obj.attr('name'));
 		},
@@ -84,48 +96,59 @@ Callback functions. It's useful for validation or event triggers.
 	</script>
 
 
-Example 4
----------
-Styling placeholder text
+Styling placeholder
+-------------------
 
-	<form id="form4">
-		<label>
+	<form>
 			<input name="user" id="user" jplaceholder="User ID" />
-		</label>
-		<label>
 			<input name="pass" id="pass" jplaceholder="Password" />
-		</label>
 	</form>
 
+
+
 	<style>
-		#form4 input {
+		.jplaceholder {
+			color:#f00 !important; /* override inline styles */
+			font-size:16px;
+		}
+		
+		.jplaceholder.focus {
+			color:#333 !important;
+		}
+	</style>
+
+	### OR
+
+	<style>
+		/* jplaceholder plug-in retrieve the styles automatically */
+		input {
 			color:#f00;
 			font-size:16px;
 		}
 		
-		#form4 input + .jplaceholder.focus {
-			color:#333 !important;  /* override inline style, jplaceholder changes opacity to .5 */
+		.jplaceholder.focus {
+			color:#333 !important;  /* override inline style */
 		}
 	</style>
 
-### OR
 
-	<style>
-		#form4 .jplaceholder {
-			color:#f00 !important;
-			font-size:16px;
-		}
-		/* focus */
+
+<span id="FOUT" />
+FOUT
+----
+To prevent FOUT in HTML5 browsers, either use *jplaceholder* attribute inside the element, or set the element's visibility to hidden in CSS until jplaceholder javascript is executed.
+
 		
-		#form4 .jplaceholder.focus {
-			color:#333 !important;
+	<style>
+		input { 
+			visibility: hidden;
 		}
 	</style>
+	
+	<form>
+		<input name="phone" placeholder="enter your phone number" />
+	</form>
 	
 	<script>
-		$("#form4").jplaceholder({showOnFocus:true});
+		$(form).jplaceholder();
 	</script>
-	
-	
-		
-	
