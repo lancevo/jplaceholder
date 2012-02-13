@@ -20,7 +20,7 @@ You can use HTML5 *placeholder* or *jplaceholder* attribute if you're experienci
 	<form>
 		<input name="phone" type="text" placeholder="Enter your phone number" />
 		<input name="pass" type="password" placeholder="Password" />
-		<input name="id" type="text" jplaceholder="User ID" />
+		<input name="id" type="text" jplaceholder="User ID" />  <!-- notice the attribute jplaceholder -->
 	</form>	
 
 	<script src="jplaceholder.js"></script>
@@ -41,7 +41,7 @@ Settings
 --------
 $(elements).jplaceholder({ force, showOnFocus, focusFn, keypressFn, blurFn	});
 
-**force** : *boolean* enable placeholder even in browsers that are supporting placeholder
+**force** : *boolean* enable jplaceholder even in HTML5 browser
 
 **showOnFocus** : *boolean* show placeholder text when the element is focusing
 
@@ -74,7 +74,9 @@ Show placeholder when input's focusing
 
 Placeholder text will goes away when the a key entered. It reduces the text opacity to 50%.
 
-	$("form").jplaceholder({*showOnFocus:true*});
+	$("form").jplaceholder({ 
+				 showOnFocus:true  
+				});
 
 
 Callback functions
@@ -104,8 +106,8 @@ Styling placeholder
 -------------------
 
 	<form>
-			<input name="user" id="user" jplaceholder="User ID" />
-			<input name="pass" id="pass" jplaceholder="Password" />
+			<input name="user" jplaceholder="User ID" />
+			<input name="pass" jplaceholder="Password" />
 	</form>
 
 
