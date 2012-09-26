@@ -1,20 +1,18 @@
+// jplaceholder.js - v1.0 (February 2012) - jQuery placeholder plugin
+// Author: Lance Vo - MIT License
+// https://github.com/lvo811/jplaceholder
+
 /*
-
-jplaceholder.js
-Lance Vo
-
-https://github.com/lvo811/jplaceholder
-
 usage:
 
 $("elements").jplaceholder(args);
 
 @param args {
-	force: boolean, // enable placeholder even in browsers that are supporting placeholder
-	showOnFocus: booealn // show placeholder text when the element is focusing
-	focusFn: function(obj, event) // callback function when element is focusing, object is the current element itself
-	keypressFn: function(obj, event) // callback function when a key pressed
-	blurFn: function(obj, event) // callback function when element is not focused
+	force: boolean,			// enable placeholder even in browsers that are supporting placeholder
+	showOnFocus: booealn		// show placeholder text when the element is focusing
+	focusFn: function(obj, event)	// callback function when element is focusing, object is the current element itself
+	keypressFn: function(obj, event)// callback function when a key pressed
+	blurFn: function(obj, event)	// callback function when element is not focused
 }
 
 */
