@@ -1,6 +1,6 @@
 // jplaceholder.js - v1.0 (February 2012) - jQuery placeholder plugin
 // Author: Lance Vo - MIT License
-// https://github.com/lvo811/jplaceholder
+// https://github.com/lancevo/jplaceholder
 
 /*
 usage:
